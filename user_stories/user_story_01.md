@@ -1,5 +1,28 @@
-## User Story 01
+# User story add new book.
 
-Als Bibliothekar möchte ich eine Möglichkeit haben, neue Bücher hinzuzufügen, damit ich mein Sortiment immer wieder erweitern kann.
-Ich möchte den Titel, den Autor, den Publisher, sowie das Veröffentlichungsjahr des Buches eingeben können.
-Anschließend werden die Daten in die Datenbank übernommen.
+Add a new book to the system.
+
+## Actors
+
+* Person (Role: Admin)
+
+## Input
+
+Title of the book, name of the author, name of the publisher, release year of the book
+
+## Internal state change
+
+The book is added to the system.
+
+## Output 
+
+Acknowledgement
+
+## Errors
+
+* title, name of the author, name of the publisher are not characters
+* release year of the book is not a number
+
+## Expected Errors
+
+* There are no expected errors.
