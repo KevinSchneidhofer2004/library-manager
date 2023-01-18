@@ -1,5 +1,27 @@
-## User Story 02
-Als Bibliothekar möchte ich eine Möglichkeit haben, zu markieren, ob ein Buch gerade ausgeliehen ist oder nicht, damit ich immer sehen kann,
-wie es um die Verfügbarkeit des Buches steht.
-Sobald ich ein Buch als ausgeliehen markiere, wird die Information in die enstprechende Column der Datenbank gespeichert.
-In der Column gibt es nur zwei Werte, nämlich einen für "ausgeliehen" und einen für "verfügbar".
+# User story mark book as borrowed.
+
+Mark a book that was previously unborrowed as now borrowed.
+
+## Actors
+
+* Person (Role: Admin)
+
+## Input
+
+Button next to the book in the list
+
+## Internal state change
+
+The column "status" in the "Books" table is switched from "not borrowed" to "borrowed".
+
+## Output 
+
+The book in the list is now marked as "borrowed".
+
+## Errors
+
+* There is no real possibility for an error.
+
+## Expected Errors
+
+* There are no expected errors.
