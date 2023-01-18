@@ -1,4 +1,27 @@
-## User Story 04
-Als Bibliothekar möchte ich sehen können, welche Bücher derzeit ausgeborgt sind, damit ich immer weiß, welche Bücher mir gerade abgehen.
-Es sollte per Button eine Möglichkeit geben, eine Tabelle anzeigen zu lassen, bei der jedes Buch, das derzeit den Status "ausgeborgt" trägt, angezeigt wird.
-Neben dem Buchtitel sowie den Daten, an welchem das Buch ausgeborgt wurde & zurückgegeben werden muss, soll auch noch der Name des Users, der das Buch gerade bei sich hat angezeigt werden.
+# User story view borrowed books.
+
+View a list with books that are set to "borrowed" and the person who borrowed the book.
+
+## Actors
+
+* Person (Role: Admin)
+
+## Input
+
+Category "borrowed" from the available sorting options of the list
+
+## Internal state change
+
+The book list will be sorted by all borrowed books and their respective users.
+
+## Output 
+
+A list with all the borrowed books + persons appears.
+
+## Errors
+
+* The list isn't sorting the books correctly
+
+## Expected Errors
+
+* There are no expected errors.
