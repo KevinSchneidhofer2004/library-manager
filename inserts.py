@@ -6,7 +6,7 @@ Base.metadata.create_all(engine)
 
 session = Session()
 
-harry_potter = Book("The Bourne Identity", "J.K. Rowling", "Bloomsburry Publishing", 1995, True)
+harry_potter = Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", "Bloomsburry Publishing", 1995, True)
 lord_of_the_rings = Book("Lord Of The Rings", "J.R.R. Tolkien", "Allen & Unwin", 1935, True)
 maze_runner = Book("The Maze Runner", "James Dashner", "Delacorte Press", 2009, True)
 scorch_trials = Book("The Scorch Trials", "James Dashner", "Delacorte Press", 2010, True)

@@ -13,5 +13,6 @@ class Customer(Base):
     book_id = Column(Integer, ForeignKey('books.id'))
     book = relationship("Book", backref="customers")
 
-    def __init__(self, customer_name):
-        self.customer_name = customer_name
+    def __init__(self, name, book):
+        self.name = name
+        self.book = book
