@@ -10,9 +10,7 @@ class Customer(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    book_id = Column(Integer, ForeignKey('books.id'))
-    book = relationship("Book", backref="customers")
+    book = relationship("Book", backref = "customers")
 
-    def __init__(self, name, book):
+    def __init__(self, name):
         self.name = name
-        self.book = book
