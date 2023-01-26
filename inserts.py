@@ -10,6 +10,7 @@ harry_potter = Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", "Bl
 lord_of_the_rings = Book("Lord Of The Rings", "J.R.R. Tolkien", "Allen & Unwin", 1935)
 maze_runner = Book("The Maze Runner", "James Dashner", "Delacorte Press", 2009)
 scorch_trials = Book("The Scorch Trials", "James Dashner", "Delacorte Press", 2010)
+percy_jackson = Book("Percy Jackson and the Olympians - The Lightning Thief", "Rick Riordan", "	Disney Hyperion", 2005 )
 
 uwe_boll = Customer("Uwe Boll")
 heinz_honzl = Customer("Heinz Honzl")
@@ -24,6 +25,7 @@ session.add(harry_potter)
 session.add(lord_of_the_rings)
 session.add(maze_runner)
 session.add(scorch_trials)
+session.add(percy_jackson)
 
 session.add(uwe_boll)
 session.add(heinz_honzl)

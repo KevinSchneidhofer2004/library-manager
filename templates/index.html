@@ -1,0 +1,28 @@
+<h1 class="pt-5 pb-2">List of Books</h1>
+
+<p class="lead alert alert-warning">This is a list of all the books of
+    <strong>{{ author_name }}</strong> in our inventory.</p>
+
+<p class="ml-4"><a href="{{ url_for('index') }}">Return to the index.</a></p>
+
+<table class="table">
+    <tr>
+        <th>Book Id</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Release Year</th>
+        <th>Customer Id</th>
+    </tr>
+
+    {% for book in books %}
+    <tr>
+        <td>{{ book.id }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author_name }}</td>
+        <td>${{ book.publisher_name }}</td>
+        <td>{{ book.release_year }}</td>
+        <td>{{ book.customer_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
