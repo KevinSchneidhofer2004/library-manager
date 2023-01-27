@@ -1,28 +1,46 @@
-<h1 class="pt-5 pb-2">List of Books</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<p class="lead alert alert-warning">This is a list of all the books of
-    <strong>{{ author_name }}</strong> in our inventory.</p>
+<head></head>
 
-<p class="ml-4"><a href="{{ url_for('index') }}">Return to the index.</a></p>
+<body>
 
-<table class="table">
-    <tr>
-        <th>Book Id</th>
-        <th>Book Name</th>
-        <th>Author</th>
-        <th>Publisher</th>
-        <th>Release Year</th>
-        <th>Customer Id</th>
-    </tr>
+    <h3>
+        <a href="{{ url_for('index') }}">Library</a>
+    </h3>
 
-    {% for book in books %}
-    <tr>
-        <td>{{ book.id }}</td>
-        <td>{{ book.title }}</td>
-        <td>{{ book.author_name }}</td>
-        <td>${{ book.publisher_name }}</td>
-        <td>{{ book.release_year }}</td>
-        <td>{{ book.customer_id }}</td>
-    </tr>
-    {% endfor %}
-</table>
+    <hr/> {%- for message in get_flashed_messages() %} {{ message }} {%- endfor %}
+
+    <h3>Books (<a href="{{ url_for('new') }}">Add Book
+         </a>)</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Release Year</th>
+                <th>Borrowed by Customer:</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for book in book %}
+            <tr>
+
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author_name }}</td>
+                <td>{{ book.publisher_name }}</td>
+                <td>{{ book.release_year }}</td>
+                <td>{{ book.customer_id }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
