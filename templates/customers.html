@@ -1,0 +1,63 @@
+{% extends 'bootstrap/base.html' %} {% block styles %} {{ super() }}
+<style>
+    body {
+        background: #e8f1f9;
+    }
+    
+    ul {
+        display: inline-block;
+    }
+</style> {% endblock %} {% block title %} Library {% endblock %} {% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+            <h1 class="pt-5 pb-2">Welcome to the Customer List!</h1>
+
+            <p class="lead">This is the index page for the Customer Section of the library.</p>
+
+            <h3>
+                <a href="{{ url_for('customers') }}">Customers</a>
+            </h3>
+            <h5>
+                <a href="{{ url_for('new_customer') }}">Add Customer</a>
+            </h5>
+
+            <h3>
+                <a href="{{ url_for('index') }}">Library</a>
+            </h3>
+            <style>
+                body {
+                    background: #e8f1f9;
+                }
+                
+                ul {
+                    display: inline-block;
+                }
+            </style>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for customer in customer %}
+                    <tr>
+
+                        <td>{{ customer.id }}</td>
+                        <td>{{ customer.name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
