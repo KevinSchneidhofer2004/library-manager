@@ -60,7 +60,19 @@
                         <td>{{ book.author_name }}</td>
                         <td>{{ book.publisher_name }}</td>
                         <td>{{ book.release_year }}</td>
-                        <td>{{ book.customer_id }}</td>
+                        <td>
+                            <a href="/customers/{{book.customer_id}}">{{book.customer_id}}</a>
+                        </td>
+                        <td>
+                            <a href={{book.id}}>
+                                <button class="btn btn-primary btn-sm">Details</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href={{book.id}}/delete>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
