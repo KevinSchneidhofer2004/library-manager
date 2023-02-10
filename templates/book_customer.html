@@ -1,0 +1,13 @@
+<h3>Books - Flask SQLAlchemy example</h3>
+<hr/> {%- for category, message in get_flashed_messages(with_categories = true) %}
+<div class="alert alert-danger">
+    {{ message }}
+</div>
+{%- endfor %}
+<form action="{{ request.path }}" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="customer" placeholder="Name" />
+    <label for="delete_book">Delete Current Book Status</label>
+    <input type="checkbox" name="Assignment_Delete" value="Delete Assignment">
+    <input type="submit" value="Submit" />
+</form>

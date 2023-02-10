@@ -10,7 +10,7 @@ class Customer(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    book = relationship("Book", backref = "customers")
+    book = relationship("Book", cascade="all, delete", backref = "customers")
 
     def __init__(self, name):
         self.name = name

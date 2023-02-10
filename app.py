@@ -86,8 +86,9 @@ def RetrieveSingleBook(id):
 @app.route('/customers/<int:id>')
 def RetrieveSingleCustomer(id):
     customer = Customer.query.filter_by(id=id).first()
+    book = Book.query.filter_by(customer_id=id).order_by(Book.title).all()
     if customer:
-        return render_template('customer_data.html', customer = customer)
+        return render_template('customer_data.html', customer = customer, book = book)
     return f"Customer with id ={id} doesn't exist"
 
 @app.route('/<int:id>/update', methods = ['GET','POST'])
@@ -103,7 +104,7 @@ def update(id):
 
 
 @app.route('/customers/<int:id>/update', methods = ['GET','POST'])
-def update_customer(id):
+def update_customer(id): 
     customer = db.session.query(Customer).filter(Customer.id == id)
     if request.method == 'POST':
         if customer:
@@ -134,6 +135,23 @@ def Delete_Customer(id):
             db.session.commit()
             return redirect('/customers')
     return render_template('delete.html')
+
+
+@app.route('/<int:id>/assign', methods = ['GET', 'POST'])
+def assign_book(id):
+    book = db.session.query(Book).filter(Book.id == id)
+    customer = Customer.query.filter_by(name = request.form.get('customer')).first()
+    if request.method == 'POST':
+        if book:
+            if request.form.get('Assignment_Delete'):
+                book.update({'customer_id': None})
+            elif not request.form['customer']:
+                flash('Please enter all the fields', 'error')
+            else:
+                book.update({'customer_id': customer.id})
+            db.session.commit()
+            return redirect('/')
+    return render_template('book_customer.html')
 
 
 app.run(debug=True)

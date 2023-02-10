@@ -7,6 +7,10 @@
     ul {
         display: inline-block;
     }
+    
+    td {
+        padding-right: 10px;
+    }
 </style> {% endblock %} {% block title %} Library {% endblock %} {% block content %}
 
 <div class="container">
@@ -53,6 +57,11 @@
                         <td>
                             <a href=/customers/{{customer.id}}>
                                 <button class="btn btn-primary btn-sm">Details</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href=/customers/{{customer.id}}/update>
+                                <button class="btn btn-info btn-sm">Update</button>
                             </a>
                         </td>
                         <td>

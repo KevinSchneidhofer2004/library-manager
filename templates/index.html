@@ -7,6 +7,10 @@
     ul {
         display: inline-block;
     }
+    
+    td {
+        padding-right: 10px;
+    }
 </style>
 {% endblock %} {% block title %} Library {% endblock %} {% block content %}
 
@@ -34,11 +38,6 @@
                 </li>
             </ul>
 
-
-
-
-
-
             <table>
                 <thead>
                     <tr>
@@ -56,26 +55,35 @@
                     <tr>
 
                         <td>{{ book.id }}</td>
-                        <td>{{ book.title }}</td>
+                        <td id="titles">{{ book.title }}</td>
                         <td>{{ book.author_name }}</td>
                         <td>{{ book.publisher_name }}</td>
                         <td>{{ book.release_year }}</td>
                         {% if book.customer_id is not none %}
-                            <td><a href="/customers/{{book.customer_id}}">{{book.customer_id}}</a></td>
-                            <td>
-                                <a href={{book.id}}/change>
-                                    <button class="btn btn-warning btn-sm">Change</button>
-                                </a>
-                            </td>
+                        <td><a href="/customers/{{book.customer_id}}">{{book.customer_id}}</a></td>
+                        <td>
+                            <a href={{book.id}}/assign>
+                                <button class="btn btn-warning btn-sm">Change</button>
+                            </a>
+                        </td>
                         {% else %}
-                            <td><p>None</p></td>
-                            <td><a href={{book.id}}/assign>
+                        <td>
+                            <p>None</p>
+                        </td>
+                        <td>
+                            <a href={{book.id}}/assign>
                                 <button class="btn btn-success btn-sm">Assign</button>
-                            </a></td>
+                            </a>
+                        </td>
                         {% endif %}
                         <td>
                             <a href={{book.id}}>
                                 <button class="btn btn-primary btn-sm">Details</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href={{book.id}}/update>
+                                <button class="btn btn-info btn-sm">Update</button>
                             </a>
                         </td>
                         <td>
